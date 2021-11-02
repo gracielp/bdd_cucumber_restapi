@@ -1,0 +1,315 @@
+[
+  {
+    "description": "In order to manage student Enrolment\nI want to make sure CRUD operation through REST API works successfully",
+    "elements": [
+      {
+        "description": "",
+        "id": "test-rest-api-for-student-enrolment-project;add-a-new-record-of-a-student-with-unique-student-number-and-validate",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Add a New Record of a Student with unique Student Number and Validate",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "A new student {\"firstname\":\"Matt\",\"lastname\":\"Welch\",\"classgroup\":\"3A\",\"studentnumber\":111123233,\"nationality\": \"Mexico\"}",
+            "match": {
+              "location": "features\\support\\common-steps\\given,.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I send POST request to /api/v1/students",
+            "match": {
+              "location": "features\\support\\common-steps\\when.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I get response code 201",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should see message \"Student is Created Successfully!\"",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "test-rest-api-for-student-enrolment-project;update-existing-record-of-a-student-with-unique-id-and-validate",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Update existing Record of a Student with unique ID and Validate",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "A student with ID #20 to be updated",
+            "match": {
+              "location": "features\\support\\common-steps\\given,.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I send PUT request with a {\"classgroup\":\"3AF\"} to /api/v1/students/class",
+            "match": {
+              "location": "features\\support\\common-steps\\when.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I get response code 200",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should see message \"Student's Class Group is updated successfully.\"",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "test-rest-api-for-student-enrolment-project;update-existing-record-of-a-student-with-unique-id-and-validate",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Update existing Record of a Student with unique ID and Validate",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "A student with ID #26 to be updated",
+            "match": {
+              "location": "features\\support\\common-steps\\given,.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I send PUT request with a {\"classgroup\":\"3A\"} to /api/v1/students/class",
+            "match": {
+              "location": "features\\support\\common-steps\\when.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I get response code 200",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should see message \"Student's Class Group is updated successfully.\"",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "test-rest-api-for-student-enrolment-project;delete-existing-record-of-a-student-with-unique-id-and-validate",
+        "keyword": "Scenario Outline",
+        "line": 28,
+        "name": "Delete existing Record of a Student with unique ID and Validate",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "A student with ID #16 to be deleted",
+            "match": {
+              "location": "features\\support\\common-steps\\given,.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I send DELETE request to /api/v1/students",
+            "match": {
+              "location": "features\\support\\common-steps\\when.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "I get response code 200",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I should see message \"Student is removed successfully.\"",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "test-rest-api-for-student-enrolment-project;fetch-details-of-student-given-the-id",
+        "keyword": "Scenario Outline",
+        "line": 38,
+        "name": "Fetch Details of Student given the ID",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 39,
+            "name": "I have student ID #1 to view",
+            "match": {
+              "location": "features\\support\\common-steps\\given,.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "I send GET request to /api/v1/students/fetchStudents/id",
+            "match": {
+              "location": "features\\support\\common-steps\\when.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "I should see the Student Record [{\"id\":1,\"firstname\":\"Mike\",\"lastname\":\"Wong\",\"classgroup\":\"3A\",\"studentnumber\":223445,\"nationality\": \"Singapore\"}]",
+            "match": {
+              "location": "features\\support\\common-steps\\then.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "test-rest-api-for-student-enrolment-project",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Test REST API for Student Enrolment Project",
+    "tags": [],
+    "uri": "features\\student.feature"
+  }
+]
