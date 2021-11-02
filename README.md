@@ -1,7 +1,7 @@
-# BDD using NodeJs and cucumberJs for Student Record
-## Make sure you have Node.js and postgres installed
+### BDD using NodeJs and cucumberJs for Student Record
+#### Make sure you have Node.js and postgres installed
 
-### setting up the table and columns in the DB after postgres is installed locally 
+#### setting up the table and columns in the DB after postgres is installed locally 
 ```
 open SQL Shell (psql) and setup all login and password
 CREATE DATABASE students;
@@ -17,7 +17,7 @@ INSERT INTO students (firstname, lastname, classgroup, studentnumber, nationalit
 VALUES ('firstN', 'lname', '3A', 223445, 'Singapore');
 ```
 
-#### clone ~ install ~ start
+#### clone the repo ~ install dependencies ~ start server and test
 ```
 git clone https://github.com/gracielp/bdd_cucumber_restapi.git  ### clone the repo
 npm i                                                           ### this would install all dependencies
