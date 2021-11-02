@@ -19,10 +19,10 @@ VALUES ('firstN', 'lname', '3A', 223445, 'Singapore');
 
 #### clone ~ install ~ start
 ```
-git clone git@github.com:heroku/node-js-sample.git  ### clone the repo
-npm i                                               ### this would install all dependencies
-npm start                                           ### to start the server listener
-npm run student-record-bdd                          ### this would run the BDD cucumber tests
+git clone https://github.com/gracielp/bdd_cucumber_restapi.git  ### clone the repo
+npm i                                                           ### this would install all dependencies
+npm start                                                      ### to start the server listener
+npm run student-record-bdd                                    ### this would run the BDD cucumber tests
 ```
 
 
