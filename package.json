@@ -23,6 +23,7 @@
     "lodash": "^4.17.21",
     "log4j": "^1.0.0",
     "pg": "^8.7.1",
+    "typeorm": "^0.2.38",
     "yarn": "^1.22.17"
   },
   "devDependencies": {
