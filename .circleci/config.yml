@@ -1,21 +1,36 @@
 # This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
+jobs:
+  build:
+    docker:
+      - image: node:11.10.1
+      - image: circleci/postgres:11-alpine-ram
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: example12
+      -image: redis:latest
 
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/2.0/orb-intro/
-orbs:
-  node: circleci/node@4.7
+  working_directory: ~/repo
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+  run_tests:
+    docker:
+      - image: circleci/node:14.16.1
+    steps:
+      - checkout
+      - run:
+          name: Install all dependencies
+          command: |
+            npm install --save
+      - run:
+          name: Run BDD Tests
+          command: |
+            npm run student-record-bdd
+      - store_test_results:  
+          path: cucumber_report.html
+      - store_artifacts:
+          path: test-results
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  build_test:
     jobs:
-      - node/test:
-          # This is the node version to use for the `cimg/node` tag
-          # Relevant tags can be found on the CircleCI Developer Hub
-          # https://circleci.com/developer/images/image/cimg/node
-          version: '16.10'
-          # If you are using yarn, change the line below from "npm" to "yarn"
-          pkg-manager: npm
+      - run_tests
